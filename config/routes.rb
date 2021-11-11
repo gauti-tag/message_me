@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   
   get 'signup', to: 'users#new'
   
+  post 'message', to: 'messages#create'
+  
 end
