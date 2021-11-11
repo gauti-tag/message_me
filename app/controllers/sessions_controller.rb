@@ -15,7 +15,8 @@ class SessionsController < ApplicationController
            
        else
            
-           flash.now[:error] = "there was something wrong with your information"
+           #flash.now[:error] = "there was something wrong with your information" / does not work may be because of ruby version
+           flash[:error] = "there was something wrong with your information"
            render 'new'
            
        end
