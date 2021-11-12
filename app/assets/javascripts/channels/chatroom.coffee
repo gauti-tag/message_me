@@ -10,3 +10,4 @@ App.chatroom = App.cable.subscriptions.create "ChatroomChannel",
     # alert data.foo  #to test the receiving data
     
     $('#message-container').append data.mod_message
+    scroll_botton()
