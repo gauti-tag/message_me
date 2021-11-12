@@ -8,7 +8,7 @@ class MessagesController < ApplicationController
         if message.save
            # redirect_to root_path
            ActionCable.server.broadcast "chatroom_channel",
-                                         foo: message.body
+                                         mod_message: message_render(message)
         end
     end
     
@@ -17,5 +17,9 @@ class MessagesController < ApplicationController
     
     def message_params
         params.require(:message).permit(:body)
+    end
+    
+    def message_render(message)
+        render(partial: 'message', locals: {message: message}) # a way to render the partial (message)
     end
 end
