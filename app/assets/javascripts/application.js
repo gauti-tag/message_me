@@ -23,9 +23,21 @@ scroll_botton = function(){
     
     if ($('#messages').length > 0)
     {
-        $('#messages').scrollTop($('#messages')[0].scrollHeight)
+        $('#messages').scrollTop($('#messages')[0].scrollHeight);
     }
     
+}
+
+submit_message = function(){
+    
+    $('#message_body').on('keydown', function(e){
+        
+        if (e.keyCode == 13)
+        {
+            $('button').click();
+            e.target.value = "";
+        }
+    });
 }
 
 $(document).on('turbolinks:load', function(){
@@ -35,11 +47,11 @@ $(document).on('turbolinks:load', function(){
     $('.message .close').on('click', function() {
         
         $(this).closest('.message').transition('fade');
-  
         
     });
     
-    scroll_botton()
+      submit_message() //I comment this because it's working by default in my navigator
+      scroll_botton()
 })
 
 
