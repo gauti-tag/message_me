@@ -31,6 +31,7 @@ gem 'jquery-rails'
 gem 'bcrypt', '~> 3.1.7'
 # use to display table view in console (database) / type first in console Hirb.enable
 gem 'hirb'
+gem 'redis'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
